@@ -1,13 +1,14 @@
 ArrayList<Frame> all_frames; //<>//
 int stroke_color=0;
+boolean random_stroke=false;
 int stroke_weight=4;
 int fill_color=0;
 
 FrameVH frame1, frame2, frame3;
 FrameElipse frame4, frame5, frame6;
-FrameSin frame7;
+
 void setup() {
-  size(800, 600);
+  size(600, 600);
   frameRate(1);
 
   all_frames = new ArrayList<Frame>();
@@ -34,7 +35,7 @@ void setup() {
 
   frame6 = new FrameElipse(500, 0, 600, height);
   
-  frame7 = new FrameSin(600, 0, 700, height);
+ 
 
   all_frames.add(frame1);
   all_frames.add(frame2);
@@ -42,7 +43,7 @@ void setup() {
   all_frames.add(frame4);
   all_frames.add(frame5);
   all_frames.add(frame6);
-  all_frames.add(frame7);
+ 
 }
 
 
@@ -56,6 +57,11 @@ void draw() {
   strokeWeight(0.4);
   for (int i = all_frames.size()-1; i >= 0; i--) {
     Frame p = all_frames.get(i);
+    if ( random_stroke){
+      stroke(color(random(255),random(255),random(255)));
+    }else{
+    stroke(stroke_color);
+    }
     p.render();
   }
 
@@ -73,11 +79,17 @@ void keyPressed() {
 
   if (key == 'r') {
     stroke_color= color(random(0, 255), random(0, 255), random(0, 255));
-  } else if (key == 'w') {
+    random_stroke=false;
+  } else if (key == 'R') {
+    random_stroke=true;
+} else if (key == 'w') {
     stroke_color= color(255, 255, 255);
+    random_stroke=false;
   } else if (key == 'b') {
     stroke_color= color(0, 0, 0);
+    random_stroke=false;
   } else if (key == 'g') {
     stroke_color= color(random(0, 255));
+    random_stroke=false;
   }
 }
