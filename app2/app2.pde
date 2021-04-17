@@ -2,7 +2,7 @@ ArrayList<Frame> all_frames; //<>//
 int stroke_color=0;
 int stroke_weight=4;
 int fill_color=0;
-
+boolean random_stroke= false;
 
 void setup() {
   size(800, 600);
@@ -46,7 +46,11 @@ FrameVH framevh = null;
 int f = 0;
 float s=40;
 void draw() {
-  
+  if ( random_stroke) {
+    stroke(color(random(255), random(255), random(255)));
+  } else {
+    stroke(stroke_color);
+  }
   switch(f) {
   case 0:
     framevh = new FrameVH(mouseX-s, mouseY-s, mouseX+s, mouseY+s);
@@ -62,7 +66,6 @@ void draw() {
     framevh.render();
     break;
   }
-
 }
 
 void mousePressed() {
@@ -75,18 +78,23 @@ void keyPressed() {
 
   if (key == 'r') {
     stroke_color= color(random(0, 255), random(0, 255), random(0, 255));
+    random_stroke=false;
+  } else if (key == 'R') {
+    random_stroke=true;
   } else if (key == 'w') {
     stroke_color= color(255, 255, 255);
+    random_stroke=false;
   } else if (key == 'b') {
     stroke_color= color(0, 0, 0);
+    random_stroke=false;
   } else if (key == 'g') {
     stroke_color= color(random(0, 255));
-  }else if (key == '0') {
+    random_stroke=false;
+  } else if (key == '0') {
     f=0;
-  }else if (key == '1') {
+  } else if (key == '1') {
     f=1;
-  }else if (key == '2') {
+  } else if (key == '2') {
     f=2;
   }
-      stroke(stroke_color);
 }
