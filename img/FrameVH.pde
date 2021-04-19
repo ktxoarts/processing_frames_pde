@@ -6,8 +6,7 @@ class FrameVH extends Frame{
   int stroke_widthV=1;
   int stroke_colorH=255;
   int stroke_widthH=1;
-  boolean enableVertical=true;
-  boolean enableHorizontal=true;
+
   FrameVH() {
   };
 
@@ -18,12 +17,6 @@ class FrameVH extends Frame{
     this.y2 = y2;
   }
 
-  void enableVertical(boolean val) {
-    enableVertical=val;
-  }
-  void enableHorizontal(boolean val) {
-    enableHorizontal=val;
-  }
 
   void render() {
 
