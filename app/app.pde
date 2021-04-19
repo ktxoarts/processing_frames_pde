@@ -1,14 +1,16 @@
-ArrayList<Frame> all_frames; //<>//
+ArrayList<Frame> all_frames; //<>// //<>//
 int stroke_color=0;
-boolean random_stroke=false;
+boolean random_stroke=true;
 int stroke_weight=4;
 int fill_color=0;
 
 FrameVH frame1, frame2, frame3;
 FrameElipse frame4, frame5, frame6;
 FrameCircle frame7;
+FrameTriangle frame8;
+
 void setup() {
-  size(700, 700);
+  size(800, 400);
   frameRate(1);
 
   all_frames = new ArrayList<Frame>();
@@ -36,26 +38,35 @@ void setup() {
   frame6 = new FrameElipse(500, 0, 600, height);
 
   frame7 = new FrameCircle(600, 0, 700, height);
-  frame7.enableHorizontal(false);
-  frame7.enableVertical(True);
+  
+  frame7.radiusV=20;
+  frame7.enableVertical(true);
+  frame7.stepV=20;
+  frame7.enableHorizontal(true);
+  frame7.radiusH=10;
+  frame7.stepH=5;
 
-/*
+  frame8 = new FrameTriangle(700, 0, 800, height);
+  
+  frame8.middleH=10;
+  frame8.middleV=20;
+  frame8.step=10;
+  
   all_frames.add(frame1);
   all_frames.add(frame2);
   all_frames.add(frame3);
   all_frames.add(frame4);
   all_frames.add(frame5);
   all_frames.add(frame6);
-  */
   all_frames.add(frame7);
+  
+  all_frames.add(frame8);
 }
 
 
 
 void draw() {
-
   background(220); 
-
   noFill();
   stroke(0);
   strokeWeight(0.4);
