@@ -6,7 +6,8 @@ class Frame {
   float y2 =height;
   boolean externalStroke=true;
   boolean externalStrokeWeight=true;
-
+  boolean enableVertical=true;
+  boolean enableHorizontal=true;
   Frame(
     ) {
   };
@@ -17,6 +18,13 @@ class Frame {
   void externalStrokeWeight(boolean val) {
     externalStrokeWeight=val;
   }
+  void enableVertical(boolean val) {
+    enableVertical=val;
+  }
+  void enableHorizontal(boolean val) {
+    enableHorizontal=val;
+  }
+
   void render() {
   };
 }

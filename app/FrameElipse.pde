@@ -19,8 +19,6 @@ class FrameElipse extends Frame{
   int stroke_colorH=255;
   float stroke_weightH=1;
 
-  boolean enableVertical=true;
-  boolean enableHorizontal=true;
   FrameElipse() {
   };
   FrameElipse(float x1, float y1, float x2, float y2) {
@@ -40,12 +38,7 @@ class FrameElipse extends Frame{
     this.stroke_colorH= stroke_colorH;
     this.stroke_weightH = stroke_weightH;
   }
-  void enableVertical(boolean val) {
-    enableVertical=val;
-  }
-  void enableHorizontal(boolean val) {
-    enableHorizontal=val;
-  }
+
 
   void render() {
 
