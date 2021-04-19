@@ -6,13 +6,19 @@ class FrameCircle extends Frame {
   float cyV= y1;
   float cxH= x2;
   float cyH= y1;
-  float radius=5;
-  float step = 5;
+  float radiusV=4;
+  float stepV = 5;
+  float offsetV=radiusV/2;
+  float radiusH=4;
+  float stepH = 5;
+  float offsetH=radiusH/2;
   float elipse_width=10;
   int stroke_colorV=255;
   float stroke_weightV=1;
   int stroke_colorH=255;
   float stroke_weightH=1;
+  
+
 
 
 
@@ -50,10 +56,10 @@ class FrameCircle extends Frame {
       }
       for (int i=0; i< (x2-x1); ) {
         for (int j=0; j< (y2-y1); ) {
-          circle(x1+i, y1+j, radius);
-          j+=step;
+          circle(x1+i+radiusV/2, y1+j+radiusV/2, radiusV);
+          j+=stepV;
         }
-        i+=step;
+        i+=stepV;
       }
     }
     // Horizontal
@@ -66,10 +72,10 @@ class FrameCircle extends Frame {
       }
       for (int i=0; i< (y2-y1); ) {
         for (int j=0; j< (x2-x1); ) {
-          circle(x1+i, y1+j, radius);
-          j+=step;
+          circle(x1+j+radiusH/2, y1+i+radiusV/2, radiusH);
+          j+=stepH;
         }
-        i+=step;
+        i+=stepH;
       }
     }
   }
