@@ -12,5 +12,4 @@ Aplicaciones varias utilizando Frames
 ![example](app3/composition-1-factor_30.png)
 ![example](app3/composition-1-factor_80.png)
 
-2021 OTAV I - Cerámica -G. Cabo / Jordán MIE 19hs.
 
